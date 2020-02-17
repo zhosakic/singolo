@@ -1,0 +1,256 @@
+@font-face {
+    font-family: Lato;
+    src: url("assets/fonts/Lato-Regular.ttf");
+}
+@font-face {
+    font-family: LatoBold;
+    src: url("assets/fonts/Lato-Bold.ttf");
+}
+@font-face {
+    font-family: LatoBlack;
+    src: url("assets/fonts/Lato-Black.ttf");
+}
+@font-face {
+    font-family: LatoLight;
+    src: url("assets/fonts/Lato-Light.ttf");
+}
+/*Подключение шрифта по умолчанию и сброс настроек браузера*/
+body {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: #666d89;
+}
+* {
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+::after,
+::before {
+    box-sizing: inherit;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+/*Указания ширины контейнера в соответсвии с условиями таска*/
+.container {
+    width: 100%;
+    max-width: 1020px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+/*Стили для Хедера (Шапки)*/
+.header {
+    width: 100%;
+    height: 95px;
+    background-color: #2d303a;
+    position: relative;
+}
+.header:after {
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    background-color: #323746;
+    bottom: 0;
+}
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 95px;
+}
+.header__logo h1 {
+    font-family: LatoBold;
+    font-size: 2.5em;
+    letter-spacing: -0.4px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 7px; /*корректировака для выравнивания по шаблону PixelPerfect*/
+}
+.header__logo h1 span {
+    color: #f06c64;
+}
+.header__nav-menu {
+    display: flex;
+    margin-top: 3px; /*корректировака для выравнивания по шаблону PixelPerfect*/
+}
+.header__nav-menu a {
+    font-family: LatoBold;
+    color: #fff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-left: 29px;
+    transition: .3s all; /*Плавный ховер*/
+}
+.header__nav-menu a:hover {
+    color: #f06c64;
+}
+/*Стили для блока слайдера*/
+.slider {
+    width: 100%;
+    height: 600px;
+    background-color: #f06c64;
+    position: relative;
+}
+.slider .container {
+    position: relative; /*Для правильного позиционирование кнопок сладера*/
+}
+.slider:after {
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    background-color: #ea676b;
+    bottom: 0;
+}
+.slider__image-1,
+.slider__image-2 {
+    position: relative;
+}
+.phone-image {
+    z-index: 10;
+}
+.phone-background {
+    z-index: 20;
+}
+.phone-image,
+.phone-shadow,
+.phone-background {
+    position: absolute;
+}
+.slider__image-1 .phone-image,
+.slider__image-1 .phone-shadow {
+    top: 54px;
+    left: 71px;
+}
+.slider__image-1 .phone-background {
+    top: 116px;
+    left: 82px;
+}
+.slider__image-2 .phone-image,
+.slider__image-2 .phone-shadow {
+    top: 54px;
+    left: 505px;
+    transform: rotateZ(90deg);
+}
+.slider__image-2 .phone-shadow {
+    transform: rotateY(180deg) rotateZ(90deg);
+}
+.slider__image-2 .phone-background {
+    top: 187px;
+    left: 441px;
+}
+.slider__button {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    top: 278px;
+    cursor: pointer;
+}
+.next-button {
+    position: absolute;
+    left: 38px;
+}
+.prev-button {
+    position: absolute;
+    right: 38px;
+}
+.slider__button span {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: #ca4549;
+    border-radius: 5px;
+    transition: .3s all;
+}
+.slider__button:hover span {
+    background-color: #323746;
+}
+.next-button span:first-child {
+    transform: rotateZ(45deg);
+    top: 20px;
+}
+.next-button span:last-child {
+    transform: rotateZ(-45deg);
+    top: 9px;
+}
+.prev-button span:first-child{
+    transform: rotateZ(-45deg);
+    top: 20px;
+}
+.prev-button span:last-child{
+    transform: rotateZ(45deg);
+    top: 9px;
+}
+/*Стили для блока Сервис*/
+.services {
+    height: 500px;
+    padding-top: 59px;
+    background-color: #f2f2f2;
+    position: relative;
+}
+.services:after {
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+}
+.services__headline {
+    font-family: LatoBlack;
+    font-size: 3em;
+    letter-spacing: -0.2px;
+    margin-bottom: 19px;
+}
+.services__description {
+    font-family: LatoLight;
+    font-size: 1.8em;
+    line-height: 1.7em;
+    margin-bottom: 47px;
+    text-align: justify;
+}
+.service__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.service__card-icon {
+    flex-basis: 60px;
+}
+.service__card-body {
+    display: flex;
+    flex-basis: 300px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 37px;
+}
+.service__card-item {
+    flex-basis: 220px;
+}
+.service__card-headline {
+    font-family: LatoBlack;
+    font-size: 1.8em;
+    line-height: 0.8em;
+    letter-spacing: -0.2px;
+}
+.service__card-description {
+    font-size: 1.2em;
+    text-align: justify;
+    line-height: 1.8em;
+    margin-top: 12px;
+    height: 60px;
+    overflow-y: hidden;
+}
