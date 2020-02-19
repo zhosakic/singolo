@@ -262,16 +262,18 @@ a.header__link-menu.active {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 37px;
+    overflow: hidden;
 }
 .service__card-item {
     flex-basis: 220px;
+    overflow: hidden;
 }
 .service__card-headline {
     font-family: LatoBlack;
     font-size: 1.8em;
     line-height: 0.8em;
     letter-spacing: -0.2px;
-    overflow: hidden;
+    white-space: nowrap;
 }
 .service__card-description {
     font-size: 1.2em;
