@@ -98,6 +98,9 @@ li {
 .header__nav-menu a:hover {
     color: #f06c64;
 }
+a.header__link-menu.active {
+    color: #f06c64;
+}
 .header__nav-menu li {
     position: relative;
 }
