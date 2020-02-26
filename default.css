@@ -1,0 +1,56 @@
+@font-face {
+    font-family: Lato;
+    src: url("assets/fonts/Lato-Regular.ttf");
+}
+@font-face {
+    font-family: LatoBold;
+    src: url("assets/fonts/Lato-Bold.ttf");
+}
+@font-face {
+    font-family: LatoBlack;
+    src: url("assets/fonts/Lato-Black.ttf");
+}
+@font-face {
+    font-family: LatoLight;
+    src: url("assets/fonts/Lato-Light.ttf");
+}
+/*Подключение шрифта по умолчанию и сброс настроек браузера*/
+body {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: #666d89;
+}
+* {
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+::after,
+::before {
+    box-sizing: inherit;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+/*Указания ширины контейнера в соответсвии с условиями таска*/
+.container {
+    width: 100%;
+    max-width: 1020px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+button {
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
