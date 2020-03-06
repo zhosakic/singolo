@@ -1,0 +1,755 @@
+@charset "UTF-8";
+@font-face {
+    font-family: Lato;
+    src: url("assets/fonts/Lato-Regular.ttf"); }
+
+@font-face {
+    font-family: LatoBold;
+    src: url("assets/fonts/Lato-Bold.ttf"); }
+
+@font-face {
+    font-family: LatoBlack;
+    src: url("assets/fonts/Lato-Black.ttf"); }
+
+@font-face {
+    font-family: LatoLight;
+    src: url("assets/fonts/Lato-Light.ttf"); }
+
+/*Подключение шрифта по умолчанию и сброс настроек браузера*/
+body {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: #666d89; }
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0; }
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+
+::after,
+::before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit; }
+
+a {
+    text-decoration: none; }
+
+li {
+    list-style: none; }
+
+input, textarea {
+    outline: none; }
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/*Указания ширины контейнера в соответсвии с условиями таска*/
+.container {
+    width: 100%;
+    max-width: 1020px;
+    padding: 0 40px;
+    margin: 0 auto; }
+
+/*Стили для Хедера (Шапки)*/
+.header {
+    width: 1020px;
+    /* доработка т.к. были ц.у. обрезать область*/
+    margin: 0 auto;
+    height: 95px;
+    background-color: #2d303a;
+    position: relative; }
+
+.header:after {
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    background-color: #323746;
+    bottom: 0; }
+
+.header__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 95px; }
+
+.header__logo h1 {
+    font-family: LatoBold;
+    font-size: 2.5em;
+    letter-spacing: -0.4px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    /*корректировака для выравнивания по шаблону PixelPerfect*/ }
+
+.header__logo h1 span {
+    color: #f06c64; }
+
+.header__nav-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 3px;
+    /*корректировака для выравнивания по шаблону PixelPerfect*/ }
+
+.header__nav-menu a {
+    font-family: LatoBold;
+    color: #fff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-left: 29px;
+    -webkit-transition: .3s all;
+    -o-transition: .3s all;
+    transition: .3s all;
+    /*Плавный ховер*/ }
+
+.header__nav-menu a:hover {
+    color: #f06c64; }
+
+a.header__link-menu.active {
+    color: #f06c64; }
+
+.header__nav-menu li {
+    position: relative; }
+
+.header__nav-menu li:before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: #494e62;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+.header__nav-menu li:first-child:before {
+    display: none; }
+
+/*Стили для блока слайдера*/
+.slider {
+    width: 1020px;
+    /* доработка т.к. были ц.у. обрезать область*/
+    margin: 0 auto;
+    height: 600px;
+    background-color: #f06c64;
+    position: relative; }
+
+.slider .container {
+    position: relative;
+    /*Для правильного позиционирование кнопок сладера*/ }
+
+.slider:after {
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    background-color: #ea676b;
+    bottom: 0; }
+
+.slider__image-1,
+.slider__image-2 {
+    position: relative; }
+
+.phone-image {
+    z-index: 10; }
+
+.phone-background {
+    z-index: 20; }
+
+.phone-image,
+.phone-shadow,
+.phone-background {
+    position: absolute; }
+
+.slider__image-1 .phone-image,
+.slider__image-1 .phone-shadow {
+    top: 54px;
+    left: 71px; }
+
+.slider__image-1 .phone-background {
+    top: 116px;
+    left: 82px; }
+
+.slider__image-2 .phone-image,
+.slider__image-2 .phone-shadow {
+    top: 54px;
+    left: 505px;
+    -webkit-transform: rotateZ(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotateZ(90deg); }
+
+.slider__image-2 .phone-shadow {
+    -webkit-transform: rotateY(180deg) rotateZ(90deg);
+    transform: rotateY(180deg) rotateZ(90deg); }
+
+.slider__image-2 .phone-background {
+    top: 187px;
+    left: 441px; }
+
+.slider__button {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    top: 278px;
+    cursor: pointer; }
+
+.next-button {
+    position: absolute;
+    left: 38px; }
+
+.prev-button {
+    position: absolute;
+    right: 38px; }
+
+.slider__button span {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: #ca4549;
+    border-radius: 5px;
+    -webkit-transition: .3s all;
+    -o-transition: .3s all;
+    transition: .3s all; }
+
+.slider__button:hover span {
+    background-color: #323746; }
+
+.next-button span:first-child {
+    -webkit-transform: rotateZ(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotateZ(45deg);
+    top: 20px; }
+
+.next-button span:last-child {
+    -webkit-transform: rotateZ(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotateZ(-45deg);
+    top: 9px; }
+
+.prev-button span:first-child {
+    -webkit-transform: rotateZ(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotateZ(-45deg);
+    top: 20px; }
+
+.prev-button span:last-child {
+    -webkit-transform: rotateZ(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotateZ(45deg);
+    top: 9px; }
+
+/*Стили для блока Сервис*/
+.services {
+    width: 1020px;
+    /* доработка т.к. были ц.у. обрезать область*/
+    margin: 0 auto;
+    height: 500px;
+    padding-top: 59px;
+    background-color: #f2f2f2;
+    position: relative; }
+
+.services:after {
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    background-color: #fff;
+    bottom: 0; }
+
+.services__headline {
+    font-family: LatoBlack;
+    font-size: 3em;
+    letter-spacing: -0.2px;
+    margin-bottom: 19px; }
+
+.services__description {
+    font-family: LatoLight;
+    font-size: 1.8em;
+    line-height: 1.7em;
+    margin-bottom: 47px;
+    text-align: justify; }
+
+.service__card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+
+.service__card-icon {
+    -ms-flex-preferred-size: 60px;
+    flex-basis: 60px; }
+
+.service__card-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 300px;
+    flex-basis: 300px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-bottom: 37px;
+    overflow: hidden; }
+
+.service__card-item {
+    -ms-flex-preferred-size: 220px;
+    flex-basis: 220px;
+    overflow: hidden; }
+
+.service__card-headline {
+    font-family: LatoBlack;
+    font-size: 1.8em;
+    line-height: 0.8em;
+    letter-spacing: -0.2px;
+    white-space: nowrap; }
+
+.service__card-description {
+    font-size: 1.2em;
+    text-align: justify;
+    line-height: 1.8em;
+    margin-top: 12px;
+    height: 60px; }
+
+
+/*Стили для блока Portfolio*/
+.portfolio {
+    height: 870px;
+    padding-top: 60px;
+    background-color: #2D303A; }
+
+.portfolio__headline {
+    font-family: LatoBlack;
+    font-size: 3.0em;
+    color: #666d89;
+    margin-bottom: 20px; }
+
+.portfolio__description {
+    font-family: Lato;
+    color: #767e9e;
+    font-size: 1.8em;
+    letter-spacing: -0.21px;
+    margin-bottom: 17px; }
+
+.portfolio__btn-block {
+    margin-bottom: 18px; }
+
+.portfolio__tab {
+    font-family: Lato;
+    color: #767e9e;
+    font-size: 1.2em;
+    border: 1px solid #666d89;
+    padding: 3px 7px;
+    border-radius: 5px;
+    margin-right: 7px;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out; }
+
+.portfolio__tab:hover {
+    border: 1px solid #c5c5c5;
+    color: #c5c5c5; }
+
+.portfolio__tab.active {
+    border: 1px solid #c5c5c5;
+    color: #c5c5c5; }
+
+.portfolio__card-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 601px;
+    overflow: hidden; }
+
+.portfolio__item {
+    width: 220px;
+    height: 187px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px; }
+
+.item-1 {
+    background-image: url("assets/images/portfolio/item-12.jpg"); }
+
+.item-2 {
+    background-image: url("assets/images/portfolio/item-9.jpg"); }
+
+.item-3 {
+    background-image: url("assets/images/portfolio/item-6.jpg"); }
+
+.item-4 {
+    background-image: url("assets/images/portfolio/item-3.jpg"); }
+
+.item-5 {
+    background-image: url("assets/images/portfolio/item-11.jpg"); }
+
+.item-6 {
+    background-image: url("assets/images/portfolio/item-8.jpg"); }
+
+.item-7 {
+    background-image: url("assets/images/portfolio/item-5.jpg"); }
+
+.item-8 {
+    background-image: url("assets/images/portfolio/item-2.jpg"); }
+
+.item-9 {
+    background-image: url("assets/images/portfolio/item-10.jpg"); }
+
+.item-10 {
+    background-image: url("assets/images/portfolio/item-7.jpg"); }
+
+.item-11 {
+    background-image: url("assets/images/portfolio/item-4.jpg"); }
+
+.item-12 {
+    background-image: url("assets/images/portfolio/item-1.jpg"); }
+
+/*Стили для блока About Us*/
+.about {
+    position: relative;
+    background-color: #f2f2f2;
+    padding-top: 59px;
+    height: 734px; }
+
+.about:after {
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    left: 0; }
+
+.about__headline {
+    font-family: LatoBlack;
+    color: #666d89;
+    font-size: 3em;
+    margin-bottom: 20px; }
+
+.about__description {
+    font-family: Lato;
+    color: #767e9e;
+    font-size: 1.8em;
+    letter-spacing: -0.08px;
+    line-height: 30px;
+    margin-bottom: 44px; }
+
+.about__card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+
+.about__name {
+    font-family: LatoBlack;
+    color: #666d89;
+    font-size: 1.8em;
+    margin-bottom: 10px; }
+
+.about__item {
+    -ms-flex-preferred-size: 300px;
+    flex-basis: 300px; }
+
+.about__photo {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 13px; }
+
+.about__detail {
+    font-family: Lato;
+    color: #767e9e;
+    font-size: 1.2em;
+    line-height: 21.56px;
+    letter-spacing: -0.1px;
+    margin-bottom: 22px; }
+
+.about__social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+
+.about__social-link {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 8px; }
+
+.about__social-link:after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out; }
+
+.about__social-link:hover::after {
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
+
+.fb {
+    background-image: url("assets/images/portfolio/fb.png"); }
+
+.google {
+    background-image: url("assets/images/portfolio/google.png"); }
+
+.twitter {
+    background-image: url("assets/images/portfolio/twitter.png"); }
+
+.in {
+    background-image: url("assets/images/portfolio/in.png"); }
+
+/*Стили для блока Формы*/
+.form {
+    background-color: #f06c64;
+    padding-top: 67px;
+    padding-bottom: 10px;
+    position: relative;
+    border-bottom: 6px solid #ea676b; }
+
+.form__headline {
+    font-family: LatoBlack;
+    color: #f0d8d9;
+    font-size: 3.0em;
+    line-height: 17.86px;
+    margin-bottom: 29px; }
+
+.form__description {
+    font-family: Lato;
+    color: #f0d8d9;
+    font-size: 1.8em;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 45px;
+    letter-spacing: -0.1px; }
+
+.form__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+
+.form__input {
+    -ms-flex-preferred-size: 619px;
+    flex-basis: 619px; }
+
+.form__contact {
+    -ms-flex-preferred-size: 301px;
+    flex-basis: 301px; }
+
+.textarea, .input {
+    font-family: Lato;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #f0d8d9;
+    width: 100%;
+    border: none;
+    background-color: #d6564f;
+    border-radius: 5px;
+    padding: 11px 13px;
+    margin-bottom: 17px; }
+
+.input::-webkit-input-placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.input::-moz-placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.input:-ms-input-placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.input::-ms-input-placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.input::placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.textarea {
+    resize: none;
+    height: 202px;
+    margin-bottom: 10px; }
+
+.textarea::-webkit-input-placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.textarea::-moz-placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.textarea:-ms-input-placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.textarea::-ms-input-placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.textarea::placeholder {
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: 400;
+    color: #f48c8f; }
+
+.form__contact-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 6px; }
+
+.form__contact-item p {
+    font-family: Lato;
+    color: #f0d8d9;
+    font-size: 1.2em;
+    font-weight: 400; }
+
+.form__contact-img {
+    width: 13px;
+    text-align: center;
+    margin-right: 10px; }
+
+.form__contact-headline {
+    font-family: LatoBlack;
+    color: #f0d8d9;
+    font-size: 1.8em;
+    font-weight: 400;
+    line-height: 17.86px;
+    margin-bottom: 11px; }
+
+.form__contact-description {
+    font-family: Lato;
+    color: #f0d8d9;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 21.56px;
+    word-wrap: break-word;
+    margin-bottom: 28px; }
+
+.form__contact-link {
+    font-family: Lato;
+    color: #f0d8d9;
+    font-size: 1.2em;
+    font-weight: 400; }
+
+.form__btn-block {
+    text-align: right; }
+
+.btn {
+    font-family: LatoBlack;
+    color: #f0d8d9;
+    font-size: 1.8em;
+    font-weight: 400;
+    padding: 10px 20px;
+    border: 1px solid #f0d8d9;
+    border-radius: 5px;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out; }
+
+.btn:hover {
+    border: 1px solid #fff;
+    color: #fff; }
+
+.footer {
+    height: 76px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #2d303a; }
+
+.footer__social-link a {
+    margin-left: 6px;
+    position: relative; }
+
+.footer__social-link a:after {
+    content: " ";
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out; }
+
+.footer__social-link a:hover:after {
+    -webkit-box-shadow: 0 0 5px white;
+    box-shadow: 0 0 5px white; }
