@@ -50,6 +50,7 @@ input, textarea {
     outline: none; }
 
 button {
+    outline: none;
     background-color: transparent;
     cursor: pointer;
 }
