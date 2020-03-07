@@ -734,6 +734,16 @@ a.header__link-menu.active {
     align-items: center;
     background-color: #2d303a; }
 
+.copyright p {
+    font-size: 1.15em;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out; }
+
+.copyright p:hover {
+    color: white;
+    cursor: pointer; }
+
 .footer__social-link a {
     margin-left: 6px;
     position: relative; }

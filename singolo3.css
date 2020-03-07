@@ -196,12 +196,13 @@ input, textarea {
 
 .copyright p {
     font-size: 1.15em;
-    transition: .3s ease-in-out;
-}
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out; }
+
 .copyright p:hover {
     color: white;
-    cursor: pointer;
-}
+    cursor: pointer; }
 
 .footer__social-link a {
     margin-left: 6px;
