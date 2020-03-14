@@ -16,12 +16,12 @@
         <h1>Singolo<span>*</span></h1>
       </div>
       <nav>
-        <ul class="header__nav-menu">
-          <li><a href="#" class="header__link-menu active">Home</a></li>
-          <li><a href="#" class="header__link-menu">Services</a></li>
-          <li><a href="#" class="header__link-menu">Portfolio</a></li>
-          <li><a href="#" class="header__link-menu">About</a></li>
-          <li><a href="#" class="header__link-menu">Contact</a></li>
+        <ul id="header__nav-menu" class="header__nav-menu">
+          <li><a href="#slider" class="header__link-menu active">Home</a></li>
+          <li><a href="#services" class="header__link-menu">Services</a></li>
+          <li><a href="#portfolio" class="header__link-menu">Portfolio</a></li>
+          <li><a href="#about" class="header__link-menu">About</a></li>
+          <li><a href="#form" class="header__link-menu">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -29,26 +29,45 @@
 </header>
 <main>
   <section id="slider" class="slider">
-    <div class="container">
-      <div class="slider__image-1">
-        <img src="assets/images/phone.png" alt="Phone" class="phone-image">
-        <img src="assets/images/shadow.png" alt="Shadow" class="phone-shadow">
-        <img src="assets/images/phone-bg1.png" alt="Background" class="phone-background">
+      <div class="slider-1 slider__item active">
+        <div class="container">
+          <div class="slider__image-1">
+            <img src="assets/images/phone.png" alt="Phone" class="phone-image">
+            <img src="assets/images/shadow.png" alt="Shadow" class="phone-shadow">
+            <img src="assets/images/phone-bg1.png" alt="Background" class="phone-background vertical-bg-btn active">
+            <img src="assets/images/phone-off-bg.png" alt="Phone off Background" class="phone-background vertical-bg-btn">
+          </div>
+          <div class="slider__image-2">
+            <img src="assets/images/phone.png" alt="Phone" class="phone-image">
+            <img src="assets/images/shadow.png" alt="Shadow" class="phone-shadow">
+            <img src="assets/images/phone-bg2.png" alt="Background" class="phone-background horizontal-bg-btn active">
+            <img src="assets/images/phone-off-bg.png" alt="Phone off Background" class="phone-background horizontal horizontal-bg-btn">
+          </div>
+        </div>
       </div>
-      <div class="slider__image-2">
-        <img src="assets/images/phone.png" alt="Phone" class="phone-image">
-        <img src="assets/images/shadow.png" alt="Shadow" class="phone-shadow">
-        <img src="assets/images/phone-bg2.png" alt="Background" class="phone-background">
+      <div class="slider-2 slider__item">
+        <div class="container">
+          <div class="slider__item-block">
+            <div class="slider__image image-1">
+              <img src="assets/images/slide-2/phone-1.png" alt="Phone">
+            </div>
+            <div class="slider__image image-2">
+              <img src="assets/images/slide-2/phone-2.png" alt="Phone">
+            </div>
+            <div class="slider__image image-3">
+              <img src="assets/images/slide-2/phone-3.png" alt="Phone">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="next-button slider__button ">
+      <div id="next-btn" class="next-button slider__button ">
         <span></span>
         <span></span>
       </div>
-      <div class="prev-button slider__button ">
+      <div id="prev-btn" class="prev-button slider__button ">
         <span></span>
         <span></span>
       </div>
-    </div>
   </section>
   <section id="services" class="services">
     <div class="container">
@@ -114,7 +133,7 @@
     <h2 class="portfolio__headline">Portfolio</h2>
     <p class="portfolio__description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
       sem nec elit.</p>
-    <div class="portfolio__btn-block">
+    <div id="portfolio__btn-block" class="portfolio__btn-block">
       <button class="portfolio__tab active">All</button>
       <button class="portfolio__tab">Web Design</button>
       <button class="portfolio__tab">Graphic Design</button>
@@ -191,14 +210,14 @@
       mollis, non commodo luctus, nisi erat
       porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris
       condimentum nibh.</p>
-    <form class="form__body">
+    <form id="form__body" class="form__body">
       <div class="form__input">
         <input class="input" name="name" type="text"  required placeholder="Name (Required)">
         <input class="input" name="email" type="email" required placeholder="Email (Required)">
-        <input class="input" name="subject" type="text" placeholder="Subject">
-        <textarea class="textarea" name="detail" placeholder="Describe your project in detail..."></textarea>
+        <input id="form__theme" class="input" name="subject" type="text" placeholder="Subject">
+        <textarea id="form__description" class="textarea" name="detail" placeholder="Describe your project in detail..."></textarea>
         <div class="form__btn-block">
-          <button class="btn" type="submit">Submit</button>
+          <button id="form__btn" class="btn" type="submit">Submit</button>
         </div>
       </div>
       <div class="form__contact">
@@ -227,17 +246,26 @@
       </div>
     </form>
   </section>
-  <footer id="footer" class="footer container">
-    <div class="copyright">
-      <p>&copy; Copyright 2013</p>
-    </div>
-    <div class="footer__social-link">
-      <a href="#" class=""><img src="assets/images/footer/fb.png" alt="FB"></a>
-      <a href="#" class=""><img src="assets/images/footer/google+.png" alt="Google+"></a>
-      <a href="#" class=""><img src="assets/images/footer/twitter.png" alt="Twitter"></a>
-      <a href="#" class=""><img src="assets/images/footer/in.png" alt="In"></a>
-    </div>
-  </footer>
 </main>
+<footer id="footer" class="footer container">
+  <div class="copyright">
+    <p>&copy; Copyright 2013</p>
+  </div>
+  <div class="footer__social-link">
+    <a href="#" class=""><img src="assets/images/footer/fb.png" alt="FB"></a>
+    <a href="#" class=""><img src="assets/images/footer/google+.png" alt="Google+"></a>
+    <a href="#" class=""><img src="assets/images/footer/twitter.png" alt="Twitter"></a>
+    <a href="#" class=""><img src="assets/images/footer/in.png" alt="In"></a>
+  </div>
+</footer>
+<div id="modal" class="modal">
+  <div id="modal__content" class="modal__content">
+    <h3>Письмо отправлено!</h3>
+    <p>Тема:<span id="modal__theme" class="modal__form-data"></span></p>
+    <p>Описание:<span id="modal__description" class="modal__form-data"></span></p>
+    <button id="modal__btn" class="btn modal__btn">ОК</button>
+  </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
