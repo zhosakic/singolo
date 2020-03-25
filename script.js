@@ -1,4 +1,3 @@
-const MENU = document.getElementById('header__nav-menu');
 const PORTFOLIO_TAB = document.getElementById('portfolio__btn-block');
 const SLIDER_COUNT = document.getElementsByClassName('slider__item');
 const NEXT_BTN = document.getElementById('next-btn');
@@ -6,46 +5,163 @@ const PREV_BTN = document.getElementById('prev-btn');
 const PORTFOLIO_COUNT = document.getElementsByClassName('portfolio__item');
 const FORM_BTN = document.getElementById('form__btn');
 const MODAL_BTN = document.getElementById('modal__btn');
+const MOBILE_MENU = document.getElementById('header__menu-btn');
+const BG_ONCLICK = document.getElementById('header__menu-bg');
+const LINK_MENU_BTN = document.querySelector('.header__mobile-nav-menu');
+const INPUT = document.querySelectorAll('input[data-type]');
 
-// Переключение меню
-MENU.addEventListener("click", (event) => {
-    MENU.querySelectorAll('a').forEach(el => el.classList.remove('active'));
 
-    event.target.classList.add('active');
+// Закрытие меню по нажатию на фон и пункт в мобильном меню
+BG_ONCLICK.addEventListener("click", el => {
+    closeMenu();
 });
 
-// Переключение слайдера
+LINK_MENU_BTN.addEventListener("click", el => {
+    if (el.target.classList.contains('header__mobile-menu-link')) {
+        closeMenu();
+    }
+});
+
+function closeMenu() {
+    MOBILE_MENU.classList.remove('active');
+    BG_ONCLICK.classList.remove('active');
+    document.querySelector('.header__mobile-menu').classList.remove('active')
+}
+
+// Подсвечивание названия активной области в хедере и в мобильном меню
+document.addEventListener("scroll", onScroll);
+
+function onScroll(event) {
+    const CURRENT_POSITION = window.scrollY + 71;
+    const SECTION = document.querySelectorAll('main > section');
+    const MENU_LINK = document.querySelectorAll('.link-menu a');
+
+    SECTION.forEach((el) => {
+        if (el.offsetTop <= CURRENT_POSITION && (el.offsetTop + el.offsetHeight) > CURRENT_POSITION) {
+            MENU_LINK.forEach((a) => {
+                a.classList.remove('active');
+                if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                    a.classList.add('active');
+                }
+            })
+        }
+    });
+}
+
+// Кнопка меню "Гамбургер"
+MOBILE_MENU.addEventListener("click", ev => {
+    MOBILE_MENU.classList.toggle('active');
+    document.querySelector('.header__menu-bg').classList.toggle('active')
+    document.querySelector('.header__mobile-menu').classList.toggle('active')
+});
+
+
+
+// Переключение слайдера новый вариант
 NEXT_BTN.addEventListener("click", (event) => {
+    let nextSlider;
+    let currentSlider;
     for (let i = 0; i < SLIDER_COUNT.length; i++) {
         if (SLIDER_COUNT[i].classList.contains('active')) {
-            if (i !== SLIDER_COUNT.length - 1) {
-                SLIDER_COUNT[i].classList.remove('active');
-                SLIDER_COUNT[i + 1].classList.add('active');
-                return;
+            currentSlider = i;
+            if (i === SLIDER_COUNT.length - 1) {
+                nextSlider = 0;
             } else {
-                SLIDER_COUNT[i].classList.remove('active');
-                SLIDER_COUNT[0].classList.add('active');
-                return;
+                nextSlider = (i + 1);
             }
         }
     }
+
+    SLIDER_COUNT[nextSlider].classList.add('right');
+    SLIDER_COUNT[nextSlider].classList.add('future');
+    SLIDER_COUNT[currentSlider].classList.add('future');
+
+    setTimeout(() => {
+        SLIDER_COUNT[currentSlider].classList.remove('active');
+        SLIDER_COUNT[currentSlider].classList.add('left');
+        SLIDER_COUNT[nextSlider].classList.add('active');
+    }, 10);
+
+    setTimeout(() => {
+        SLIDER_COUNT[currentSlider].classList.remove('left');
+        SLIDER_COUNT[nextSlider].classList.remove('right');
+        SLIDER_COUNT[nextSlider].classList.remove('future');
+        SLIDER_COUNT[currentSlider].classList.remove('future');
+    }, 1010);
+
 });
 
 PREV_BTN.addEventListener("click", (event) => {
+    let nextSlider;
+    let currentSlider;
     for (let i = 0; i < SLIDER_COUNT.length; i++) {
         if (SLIDER_COUNT[i].classList.contains('active')) {
-            if (i !== 0) {
-                SLIDER_COUNT[i].classList.remove('active');
-                SLIDER_COUNT[i - 1].classList.add('active');
-                return;
+            currentSlider = i;
+            if (i === 0 ) {
+                nextSlider = SLIDER_COUNT.length - 1;
             } else {
-                SLIDER_COUNT[i].classList.remove('active');
-                SLIDER_COUNT[SLIDER_COUNT.length - 1].classList.add('active');
-                return;
+                nextSlider = (i - 1);
             }
         }
     }
+
+    SLIDER_COUNT[nextSlider].classList.add('left');
+    SLIDER_COUNT[nextSlider].classList.add('future');
+    SLIDER_COUNT[currentSlider].classList.add('future');
+
+    setTimeout(() => {
+        SLIDER_COUNT[currentSlider].classList.remove('active');
+        SLIDER_COUNT[currentSlider].classList.add('right');
+        SLIDER_COUNT[nextSlider].classList.add('active');
+    }, 10);
+
+    setTimeout(() => {
+        SLIDER_COUNT[currentSlider].classList.remove('right');
+        SLIDER_COUNT[nextSlider].classList.remove('left');
+        SLIDER_COUNT[nextSlider].classList.remove('future');
+        SLIDER_COUNT[currentSlider].classList.remove('future');
+    }, 1010);
+
 });
+
+
+
+
+// Переключение слайдера старый вариант
+// NEXT_BTN.addEventListener("click", (event) => {
+//     for (let i = 0; i < SLIDER_COUNT.length; i++) {
+//         if (SLIDER_COUNT[i].classList.contains('active')) {
+//             if (i !== SLIDER_COUNT.length - 1) {
+//                 SLIDER_COUNT[i].classList.remove('active');
+//                 SLIDER_COUNT[i + 1].classList.add('active');
+//                 return;
+//             } else {
+//                 SLIDER_COUNT[i].classList.remove('active');
+//                 SLIDER_COUNT[0].classList.add('active');
+//                 return;
+//             }
+//         }
+//     }
+// });
+
+// PREV_BTN.addEventListener("click", (event) => {
+//     for (let i = 0; i < SLIDER_COUNT.length; i++) {
+//         if (SLIDER_COUNT[i].classList.contains('active')) {
+//             if (i !== 0) {
+//                 SLIDER_COUNT[i].classList.remove('active');
+//                 SLIDER_COUNT[i - 1].classList.add('active');
+//                 return;
+//             } else {
+//                 SLIDER_COUNT[i].classList.remove('active');
+//                 SLIDER_COUNT[SLIDER_COUNT.length - 1].classList.add('active');
+//                 return;
+//             }
+//         }
+//     }
+// });
+
+
+
 
 // Включение и выключение экранов телефонов в блоке Слайдера
 document.querySelector('.slider__image-2').addEventListener('click', (event) => {
@@ -94,7 +210,6 @@ PORTFOLIO_TAB.addEventListener("click", (event) => {
 });
 
 const setDefaultState = () => {
-    console.log('default');
     for (let i = 0; i < PORTFOLIO_COUNT.length; i++) {
         for (let j = 0; j < PORTFOLIO_COUNT.length; j++) {
             let classCurrent = `item-${j + 1}`;
@@ -135,9 +250,9 @@ const graphicDesignTabActive = () => {
 
 const artworkTabActive = () => {
     for (let i = 0; i < PORTFOLIO_COUNT.length; i++) {
-        let arrTab = [  'item-5', 'item-6', 'item-7', 'item-8',
-                        'item-9', 'item-10', 'item-11', 'item-12',
-                        'item-1', 'item-2', 'item-3', 'item-4'];
+        let arrTab = ['item-5', 'item-6', 'item-7', 'item-8',
+            'item-9', 'item-10', 'item-11', 'item-12',
+            'item-1', 'item-2', 'item-3', 'item-4'];
         PORTFOLIO_COUNT[i].classList.add(arrTab[i]);
     }
 };
@@ -164,22 +279,53 @@ MODAL_BTN.addEventListener("click", event => {
 
 FORM_BTN.addEventListener("click", event => {
     event.preventDefault();
+    let validateValue = false;
 
-    let formTheme = document.getElementById('form__theme').value.toString();
-    let formDescription = document.getElementById('form__description').value.toString();
+    for (let i = 0; i < INPUT.length; i++) {
 
-    document.getElementById('modal').classList.add('active');
-    document.getElementById('modal__content').classList.add('active');
+        INPUT[i].classList.remove('invalid');
 
-    if (formDescription !== '') {
-        document.getElementById('modal__description').innerText = formDescription
-    } else {
-        document.getElementById('modal__description').innerText = 'Без описания'
+        let inputType = INPUT[i].dataset.type;
+        let inputValue = INPUT[i].value;
+
+        switch (inputType) {
+            case 'name':
+                if (inputValue !== '') {
+                    validateValue = true;
+                }
+                break;
+
+            case 'email':
+                validateValue = /^\w{1,}@\w{1,}\.\w{1,}$/.test(inputValue);
+                break;
+
+        }
+
+        if (!validateValue) {
+            INPUT[i].classList.add('invalid');
+        }
     }
 
-    if (formTheme !== '') {
-        document.getElementById('modal__theme').innerText = formTheme
+    if (!validateValue) {
+        alert('Сорямба, но форма не отправлена, так как выделенные поля надобна заполнить :)');
     } else {
-        document.getElementById('modal__theme').innerText = 'Без описания'
+
+        let formTheme = document.getElementById('form__theme').value.toString();
+        let formDescription = document.getElementById('form__description').value.toString();
+
+        document.getElementById('modal').classList.add('active');
+        document.getElementById('modal__content').classList.add('active');
+
+        if (formDescription !== '') {
+            document.getElementById('modal__description').innerText = formDescription
+        } else {
+            document.getElementById('modal__description').innerText = 'Без описания'
+        }
+
+        if (formTheme !== '') {
+            document.getElementById('modal__theme').innerText = formTheme
+        } else {
+            document.getElementById('modal__theme').innerText = 'Без описания'
+        }
     }
 });

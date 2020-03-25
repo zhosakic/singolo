@@ -16,7 +16,7 @@
         <h1>Singolo<span>*</span></h1>
       </div>
       <nav>
-        <ul id="header__nav-menu" class="header__nav-menu">
+        <ul id="header__nav-menu" class="link-menu header__nav-menu">
           <li><a href="#slider" class="header__link-menu active">Home</a></li>
           <li><a href="#services" class="header__link-menu">Services</a></li>
           <li><a href="#portfolio" class="header__link-menu">Portfolio</a></li>
@@ -25,6 +25,24 @@
         </ul>
       </nav>
     </div>
+  </div>
+  <div id="header__menu-btn" class="header__menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div id="header__menu-bg" class="header__menu-bg"></div>
+  <div class="header__mobile-menu">
+    <div class="header__headline">
+      <h2>Singolo<span>*</span></h2>
+    </div>
+    <ul class="link-menu header__mobile-nav-menu">
+      <li><a href="#slider" class="header__mobile-menu-link active">Home</a></li>
+      <li><a href="#services" class="header__mobile-menu-link">Services</a></li>
+      <li><a href="#portfolio" class="header__mobile-menu-link">Portfolio</a></li>
+      <li><a href="#about" class="header__mobile-menu-link">About</a></li>
+      <li><a href="#form" class="header__mobile-menu-link">Contact</a></li>
+    </ul>
   </div>
 </header>
 <main>
@@ -60,7 +78,7 @@
           </div>
         </div>
       </div>
-      <div id="next-btn" class="next-button slider__button ">
+      <div id="next-btn" class="next-button slider__button">
         <span></span>
         <span></span>
       </div>
@@ -212,8 +230,8 @@
       condimentum nibh.</p>
     <form id="form__body" class="form__body">
       <div class="form__input">
-        <input class="input" name="name" type="text"  required placeholder="Name (Required)">
-        <input class="input" name="email" type="email" required placeholder="Email (Required)">
+        <input class="input" name="name" type="text"  required placeholder="Name (Required)" data-type="name">
+        <input class="input" name="email" type="email" required placeholder="Email (Required)" data-type="email">
         <input id="form__theme" class="input" name="subject" type="text" placeholder="Subject">
         <textarea id="form__description" class="textarea" name="detail" placeholder="Describe your project in detail..."></textarea>
         <div class="form__btn-block">
