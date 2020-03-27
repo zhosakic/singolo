@@ -1181,8 +1181,10 @@ a.header__link-menu.active {
     }
 
     .slider__image-1 .phone-image {
+        /*top: 40px;*/
         width: 163px;
     }
+
 
     .slider__image-1 .phone-shadow {
         width: 182px;
@@ -1275,6 +1277,38 @@ a.header__link-menu.active {
         flex-basis: calc(33% - 10px);
         height: calc((30vw - 40px) * 0.85);
         margin-bottom: 20px;
+    }
+
+    .slider__image-1 .phone-image,
+    .slider__image-1 .phone-shadow {
+        top: 40px;
+        left: 10px;
+    }
+
+    .slider__image-1 .phone-background {
+        width: 143px;
+        top: 88px;
+        left: 20px;
+    }
+
+    .slider__image-2 .phone-image, .slider__image-2 .phone-shadow {
+        top: 41px;
+    }
+
+    .slider__image-2 .phone-background {
+        top: 143px;
+    }
+
+    .slider__image-2 .phone-background.horizontal {
+        top: 90px;
+    }
+
+    .next-button {
+        left: 30px;
+    }
+
+    .prev-button {
+        right: 30px;
     }
 }
 
