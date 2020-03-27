@@ -56,7 +56,6 @@ MOBILE_MENU.addEventListener("click", ev => {
 });
 
 
-
 // Переключение слайдера новый вариант
 NEXT_BTN.addEventListener("click", (event) => {
     let nextSlider;
@@ -97,7 +96,7 @@ PREV_BTN.addEventListener("click", (event) => {
     for (let i = 0; i < SLIDER_COUNT.length; i++) {
         if (SLIDER_COUNT[i].classList.contains('active')) {
             currentSlider = i;
-            if (i === 0 ) {
+            if (i === 0) {
                 nextSlider = SLIDER_COUNT.length - 1;
             } else {
                 nextSlider = (i - 1);
@@ -123,8 +122,6 @@ PREV_BTN.addEventListener("click", (event) => {
     }, 1010);
 
 });
-
-
 
 
 // Переключение слайдера старый вариант
@@ -161,8 +158,6 @@ PREV_BTN.addEventListener("click", (event) => {
 // });
 
 
-
-
 // Включение и выключение экранов телефонов в блоке Слайдера
 document.querySelector('.slider__image-2').addEventListener('click', (event) => {
     if (event.target.classList.contains('horizontal-bg-btn')) {
@@ -182,8 +177,37 @@ document.querySelector('.slider__image-1').addEventListener('click', (event) => 
     }
 });
 
+let activeCard = -1;
+let itemActiveNumber = 0;
+let currentActive = 0;
+
 // Переключение табаов в блоке Портфолио
 PORTFOLIO_TAB.addEventListener("click", (event) => {
+
+    for (let i = 0; i < PORTFOLIO_COUNT.length; i++) {
+        if (PORTFOLIO_COUNT[i].classList.contains('active')) {
+            activeCard = i;
+            for (let j = 0; j < PORTFOLIO_COUNT.length; j++) {
+                itemActiveNumber = 'item-' + j;
+                if (PORTFOLIO_COUNT[i].classList.contains(itemActiveNumber)) {
+                    currentActive = itemActiveNumber;
+                }
+            }
+        }
+    }
+
+    if (activeCard !== -1) {
+        PORTFOLIO_COUNT[activeCard].classList.remove('active');
+    }
+
+    setTimeout(() => {
+        for (let i = 0; i < PORTFOLIO_COUNT.length; i++) {
+            if (PORTFOLIO_COUNT[i].classList.contains(currentActive)) {
+                PORTFOLIO_COUNT[i].classList.add('active');
+            }
+        }
+    }, 10);
+
     if (event.target.classList.contains('portfolio__tab')) {
         PORTFOLIO_TAB.querySelectorAll('.portfolio__tab').forEach(el => el.classList.remove('active'));
 

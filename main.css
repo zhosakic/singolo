@@ -1270,6 +1270,14 @@ a.header__link-menu.active {
     }
 }
 
+@media screen and (max-width: 1019px){
+    .portfolio__item {
+        flex-basis: calc(33% - 10px);
+        height: calc((30vw - 40px) * 0.85);
+        margin-bottom: 20px;
+    }
+}
+
 @media screen and (max-width: 767px) {
     body {
         margin-top: 71px;
@@ -1344,42 +1352,44 @@ a.header__link-menu.active {
 
     .slider__image-1 .phone-image {
         width: 79px;
-        top: 30px;
+        top: 20px;
+        left: 62px;
     }
 
     .slider__image-1 .phone-shadow {
         width: 88px;
-        top: 30px;
+        top: 20px;
+        left: 62px;
     }
 
     .slider__image-1 .phone-background {
         width: 69px;
-        top: 54px;
-        left: 76px;
+        top: 44px;
+        left: 67px;
     }
 
     .slider__image-2 .phone-image {
         width: 79px;
-        top: 30px;
-        left: 475px;
+        top: 20px;
+        left: 481px;
     }
 
     .slider__image-2 .phone-shadow {
         width: 88px;
-        top: 30px;
-        left: 475px;
+        top: 20px;
+        left: 481px;
     }
 
     .slider__image-2 .phone-background {
         width: 122px;
-        left: 455px;
-        top: 79px;
+        left: 460px;
+        top: 69px;
     }
 
     .slider__image-2 .phone-background.horizontal {
         width: 71px;
-        left: 480px;
-        top: 53px;
+        left: 486px;
+        top: 42px;
     }
 
     .next-button {
@@ -1417,8 +1427,8 @@ a.header__link-menu.active {
     }
 
     .portfolio__item {
-        width: 151px;
-        height: 128px;
+        flex-basis: calc(50% - 7px);
+        height: calc((50vw - 37px) * 0.85);
         margin-bottom: 14px;
     }
 
@@ -1471,6 +1481,7 @@ a.header__link-menu.active {
     }
 }
 
+
 @media screen and (max-width: 425px) {
     .copyright {
         display: none;
@@ -1478,5 +1489,9 @@ a.header__link-menu.active {
 
     .footer {
         justify-content: center;
+    }
+
+    .service__card-description {
+        width: 220px;
     }
 }
